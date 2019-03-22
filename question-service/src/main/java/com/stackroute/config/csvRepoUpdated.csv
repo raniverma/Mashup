@@ -1,0 +1,338 @@
+questionId,questionTitle,questionDescription,inputFormat,outputFomat,difficulty,tags,gitUrl
+1,ArrayListOperation,"Given an ArrayList of�N�lowercase characters. The task is to�count frequency�of elements in the list.
+Note: use add() to append element in the list and contains() to check an element is present or not in the list and collections.frequency() to find the frequency of the element in the list.
+Your task is to complete the functions insert() and freq() which are used to insert and find frequency of element respectively.","First line of testcase contains T, number of testcases. For each testcase, first line contains number of queries Q. Each query may be any one of the two type:
+1. ""i"" with ""c"" : insert the element ""c"" into the ArrayList
+2. ""f"" with ""c"": find the frequency of ""c"" in the ArrayList.
+
+
+Constraints:
+1 <= T <= 100
+1 <= N <= 105
+1 <= Q <= 102
+Example:
+Input:
+2
+6
+i g i e i e i k i s f e
+4
+i c i p i p f f","Output Format:
+For each testcase, output the frequency of elements. Print ""Not Present"" if element is not present in the list else its frequency in new line for every query.
+22
+Not Present
+Explanation:
+Testcase 1: Inserting g, e, e, k, s into the list. Frequency of e is 2 in the list.
+Testcase 2: Inserting c, p, p into the list. Frequency of f is 0 in the list.
+",Intermediate,ArrayList,https://github.com/aroranamita09/ArrayListOperation
+2,Check-Palindrome and reverse it,Write a Java method to Reverse the given input & Check if it is a Palindrome.,12321,yes,Beginner,If-else statement,https://github.com/aroranamita09/Check-Palindrome-and-reverse-it.git
+3,PowerOfFour,Write a Java method to check if a given number is power of 4,64,yes,Beginner,Conditional Statements,https://github.com/aroranamita09/PowerOfFour.git
+4,Member variables,"Create a class named Member with Name, age, Salary as its variable, write an other class named Member Variable that creates an instance of the Member class, initialises its member variables, and then displays the value of each member variable. ","Member with Name, age, Salary as its variable", Members Name: Harry Potter  Members Age: 30  Members Salary: 2500.3,Beginner,Class,https://github.com/aroranamita09/Member-variables.git
+5,Rotate Arrays,"Given an array of size N, rotate it by D elements. 
+2
+5 2
+1 2 3 4 5 
+10 3
+2 4 6 8 10 12 14 16 18 20","The first line of the input contains T denoting the number of testcases. First line of test case is the number of elements N, next line contains D. Subsequent line will be the array elements.","For each testcase, in a new line, output the rotated array.
+
+3 4 5 1 2
+8 10 12 14 16 18 20 2 4 6
+
+",Beginner,ArrayList,https://github.com/aroranamita09/RotateArray.git
+6,EvenNumTest,"Write a boolean method called isEven() in a class called EvenNumTest, which takes an int as input and returns true if the input is even. The signature of the method is as follows: public static boolean isEven(int number)",Int 3,FALSE,Beginner,If-else statement,https://github.com/aroranamita09/EvenNumTest.git
+7,Average,"Write a program, which reads number of students and n grades as input (of int between 0 and 100, inclusive) and displays the average, minimum and maximum.Your program shall check for valid input. You should keep all the grades in an int[] and use a method for each of the computations",45 68 23,"Average:45.33
+Minimum:23
+Maximum:68",Beginner,Object,https://github.com/aroranamita09/Average.git
+8,Factorial,"Write a program to list all the factorials, that can be expressed as an int (i.e., 32-bit signed integer). ",Your output shall look like: Int Factorials:      The factorial of 1 is 1      The factorial of 2 is 2           ..........      The factorial of 12 is 479001600      he factorial of 13 is out of range Modify your program and add a method called longFactorial to list all the factorial that can be expressed as a long (64-bit signed integer).The maximum value for long is kept in a constant called Long.MAX_VALUE. ,your output shall look like: Long Factorials:         The factorial of 1 is is 1.         The factorial of 2 is is 2.                 ..........         The factorial of 20 is is 2432902008176640000.         The factorial of 21 is out of range.,Beginner,Operations on Collections,https://github.com/aroranamita09/Factorial.git
+9,Ugly Numbers,"Ugly numbers are numbers whose only prime factors are 2, 3 or 5. The sequence 1, 2, 3, 4, 5, 6, 8, 9, 10, 12, 15, � shows the first 11 ugly numbers. By convention, 1 is included. Write a program to find Nth Ugly Number.","The first line of input contains an integer T denoting the number of test cases. T testcases follow. For each testcase there is one line of input that contains the number N.
+",Print the�Nth�Ugly Number.,Intermediate,Array,https://github.com/aroranamita09/Ugly-Numbers.git
+10,Test the range,Write a program which accepts an integer number as input from the user and perform the following conditional checks:,"a. if number is odd and exists between 20 to 30 
+b.  if number is even and exists between 20 and 30", a. Print Tom    b. Print Jerry,Beginner,Language Basics,https://github.com/aroranamita09/Test-the-range.git
+11,Vowel or Consonant,"Create a program that accepts a word as input and checks for each single character letter in the word whether it is a consonant or vowel.
+Condition:         
+    a. Print an error message if the input is not a letter         
+    b. If the input having more than one letter, print the required output
+          (Vowel or Consonant) for each letter
+ 
+
+
+","a.Input : p
+b. Input : ap","a.Output : Consonant
+ b.Output : Vowel Consonant (should it be a - vowel, p � consonant)",Beginner,Language Basics,https://github.com/aroranamita09/Vowel-or-Consonant.git
+12,Pattern Matching,Write a program using a loop to print the following ,"a.6
+b.5","a.output. 1 2 2 3 3 3 4 4 4 4 5 5 5 5 5 6 6 6 6 6 6 . . . nth iteration.  
+b.  Output : 1 2 2 3 3 3 4 4 4 4 5 5 5 5 5",Intermediate,String,https://github.com/aroranamita09/Pattern-Matching.git
+13,Add numbers of a string,Write a program that reads an unspecified number of integer arguments using Scanner Class and adds them together. The program should display total of the given input number and should only consider integer value.The program should display an error message if there are any non integer values , Input :  12 23 2 4,Output : 41,Beginner,Array,https://github.com/aroranamita09/Add-numbers-of-a-string.git
+14,Judge a character,"Write a program that takes a character from the user as input and determines whether the character entered is a capital letter, a small case letter, a digit or a special symbol and display appropriately. ",Input:  A ,Output:  Capital letter,Intermediate,Design Pattern,https://github.com/aroranamita09/Judge-a-character.git
+15,Sort the pattern,"Write a program which accepts a number as input from user and perform the following: a. sort the number in non-increasing order    b. after sorting sum all the even numbers, the sum should be greater than 15 .    c. if sum is more than 15,then print output as true or false.   ",Input  : 234534 ,Output : Sorted number in non-increasing order : 544332                  Sum of even numbers : 10 FALSE,Beginner,Object ,https://github.com/aroranamita09/Sort-the-pattern.git
+16,GuessTheTarget,Write a program which accepts a number from user as input (set the limit say 1 - 50 or 1 - 100) User should guess until the the target number is guessed correctly. Print separate messages for the following:          a. Number guessed is more than original number          b. Number guessed is less than original number          c. Number guessed matches the original number,50,Yes this is in range,Intermediate,Conditional statements,https://github.com/aroranamita09/GuessTheTarget.git
+17,StringModifications,"Given a string �str�, check if it can be constructed by taking a substring of it and appending multiple copies of the substring together.  For example ""abab"" can be created by appending ""ab"" to ""ab"", but ""abac"" cannot be created by appending a substring to itself.","Input:
+abcabcabc
+
+",True,Beginner,String,https://github.com/aroranamita09/StringModifications.git
+18,Update collections,"Write a Java program to update specific array element by given element and empty the array list .
+
+
+","Input: [Mango,Kiwi,Berry, Grape ]","Output: [Kiwi, Grape, Mango, Berry]
+Array list after removing all elements []",Beginner,Operations on Collections,https://github.com/aroranamita09/Update-collections.git
+19,Adding Ones,"You start with an array A of size N. Also, A[i] = 0 for i = 1 to N. You will be given K positive integers. Let j be one of these integers, you have to add 1 to all A[i], for i >= j. Your task is to print the array A after all these K updates are done.","The first line of input contains an integer  T, denoting the number of test cases. Then T test cases follow. The first line of each test case consists of two space separated positive integers N and K. The second line consists of K space separated integers.","For each test case, in a new line print the array A from the first index to the last index after the K updates are done. Consecutive values are to be separated by a single space between them while printing.
+ ",Intermediate,Array,https://github.com/aroranamita09/AddingOnes.git
+20,Sort the collections,"Write a program to implement set interface which sorts the given randomly ordered names in
+ascending order. Convert the sorted set in to an array list
+",abcabcabc,"Output :
+Sorted Set : Alice Bluto Eugene Harry Olive
+Array list from Set : Alice Bluto Eugene Harry Olive",Intermediate,ArrayList,https://github.com/aroranamita09/SortTheCollections.git
+21,Frequency of character,Write a java program to count the total number of occurrences of a given character in a string without using any loop?, For Example- Java is java again java again count number of occurrence of a in the given string,10,Beginner,String,https://github.com/aroranamita09/FrequencyOfCharacter.git
+22,Shuffle the characters, Write a program to replace all d with f and all l with t in the given String  ,"Input: daily dry
+Original string: daily dry ","Output: faity fry 
+New String: faity fry",Beginner,String,https://github.com/aroranamita09/ShuffleTheCharacters.git
+23,Sort a string ,Write a program that sets up a String variable containing a paragraph of text of your choice. a. Extract the words from the text and sort them into alphabetical order.    b. Display the sorted list of words.,"My
+first
+name
+is
+Vidyadhar
+and
+my
+last
+name
+is
+Yagnik","and
+first
+is
+is
+last
+my
+My
+name
+name
+Vidyadhar
+Yagnik",Intermediate,String,https://github.com/aroranamita09/SortString-.git
+24,Transpose string,Write a program to transpose the given string.  ,Input String : a quick brown fox jumps over the lazy dog , Output String: a  kciuq  nworb  xof  spmuj  revo  eht  yzal  god,Beginner,String,https://github.com/aroranamita09/TransposeString.git
+25,Implement Regular Expression,Write a program with the implementation of Regular Expression to find the presence of the name Harry in a string. ,"nput: This is Harry. 
+Input : This is Henry.", I Output: Is Harry here ? true    Output: Is Harry here ? False,Beginner,String,https://github.com/aroranamita09/ImplementRegularExpression.git
+26,Multiple Occurence of word in string,Write a program to find out the multiple occurrences of the given word in a string using Matcher methods. , Input : She sells seashells by the seashore     Given word: se  ,Output :Found at: 4 - 6                 Found at: 10 - 12                 Found at: 27 - 29,Intermediate,String,https://github.com/aroranamita09/MultipleOccurenceOfWordInString.git
+27,List Operations,Create a program that accepts a list of user names and stores it . ,"The program should also allow searching for a user based on user name and should return either true or false, based on whether or not the user is present.",True/False,Beginner,Object,https://github.com/aroranamita09/ListOperations.git
+28,Palindrome,Write a program which accepts a number as input and check whether the given number is palindrome or not If it is a palindrome then a. Add all the even numbers and check whether the sum is more than 25.    b. Print success and failure messages for all 3 conditions,"Input:2468642,Input: 12345654321","Output: 12345 is not palindrome
+
+Output : 12345654321 is palindrome and sum of even numbers is less than 25",Beginner,Object,https://github.com/aroranamita09/Palindrome.git
+29,ConsecutiveDigits,"Write a program to find out if a series of 7 digits are consecutive numbers. To make this easier, assume the digits are a string and use split()"," Input: 98,96,95,94,93
+Input: 54,53,52,51,50,49,48
+Input: 1,2,3,4,5,6,6",,Beginner,Object,https://github.com/aroranamita09/ConsecutiveDigits.git
+30,Conditional-check,"Create a program that accepts a word as input and checks for each single character letter in the word whether it is a consonant or vowel. Condition:              a. Print an error message if the input is not a letter              b. If the input having more than one letter, print the required output           (Vowel or Consonant) for each letter",Input : ap,"Output : Vowel Consonant (should it be a - vowel, p - consonant)",Beginner,Conditional statements,https://github.com/aroranamita09/Conditional-check.git
+31,Pattern Printing,Write a program using a loop to print the following output. 1 2 2 3 3 3 4 4 4 4 5 5 5 5 5 6 6 6 6       6 6 . . . nth iteration.,Input: 5, Output : 1 2 2 3 3 3 4 4 4 4 5 5 5 5 5,Beginner,Design Pattern,https://github.com/aroranamita09/PatternPrinting.git
+32,Find Number of Numbers,"Given an array A[]  of n elements. Your task is to complete the Function num which returns an integer denoting the total number of times digit k appears in the whole array.
+
+For Example:
+
+A[]={11,12,13,14,15}, k=1
+
+Output=6 //Count of the digit 1 in the array
+
+","The first line of input contains an integer T denoting the no of test cases. Then T test cases follow. The first line of each test case contain an integer n denoting the size of the array A[]. Then in the second line are n space separated values of the array A[] .In the third line of each test case contains an integer k, which is the digit to be counted.
+2
+5
+11 12 13 14 15 
+1
+4
+0 10 20 30
+0","Output :For each test case in a new line print the number of elements counted.
+6
+4",Beginner,Array,https://github.com/aroranamita09/Input-Output.git
+33,Friendly Array,"Like people, numbers are also friends with each other.Friendliness between any two numbers a and b is defined as the absolute difference between the two. Lower is this number more friendly the numbers are. Now you are given an array of numbers and you are required to find the friendliness of this array. This can be calculated as the sum of the friendliness of each element in the array with its closest friend in the same array. 
+Output the value of friendliness for the given array.","Input: The first line of input contains an integer T denoting the number of test cases. Each test case contains the number of elements in the array a[] as n and next line contains space separated n elements in the array a[].
+For test-case 1: 
+3
+4 1 5
+Here the elements are 4, 1, and 5.
+The friendliness of 4 with other elements are
+F(4,1) = |4-1| = 3
+F(4,5) = |4-5| = 1
+Min(F(4,1),F(4,5)) = 1 => This means 4 is closet friend to 5
+The friendliness of 1 with other elemnts are
+F(1,4) = |1-4| = 3
+F(1,5) = |1-5| = 4
+Min(F(1,4),F(1,5)) = 3 => This means 1 is closet friend to 4
+The friendliness of 5 with other elemnts are
+F(5,1) = |5-1| = 4
+F(5,4) = |5-4| = 1
+Min(F(5,1),F(5,4)) = 1 => This means 5 is closet friend to 4
+So, the total friendliness of the array is Min(F(4,1),F(4,5)) + Min(F(1,4),F(1,5)) + Min(F(5,1),F(5,4)) =>1+3+1 => 5",Output:Print an integer which denotes the friendliness in the array.,Beginner,Design Pattern,https://github.com/aroranamita09/Identifythecharacteter.git
+34,Sort,"Write a program which accepts a number as input from user and perform the following: a. sort the number in non-increasing order (B)  after sorting sum all the even numbers, the sum should be greater than 15 .  (c.) if sum is more than 15,then print output as true or false.",Input  : 234534,Output : Sorted number in non-increasing order : 544332  (B)   Sum of even numbers : 10 (C) FALSE,Beginner,Object,https://github.com/aroranamita09/Sort.git
+35,Remove Vowels From Loop,"Write a program to set up an array of places, Loop round and remove the vowels. Display the new words in console"," Input:
+    India
+    United States
+    Germany
+     Egypt
+     Czechoslovakia","Output:
+    Place Name without Vowels:0 Ind
+    Place Name without Vowels:1 Untd Stts
+    Place Name without Vowels:2 Grmny
+    Place Name without Vowels:3 Egypt
+    Place Name without Vowels:4 czchslvk",Intermediate,Array,https://github.com/aroranamita09/RemoveVowelsFromLoop.git
+36,Reverse a String,Write a program to reverse any string without using String Buffer.,Input : london,Output : nodnol,Beginner,String,https://github.com/aroranamita09/ReverseAString.git
+37,Append a string,"Write a program for the following condition:
+Given 2 inputs , where input1 is string and input 2 is integer value, the last n characters should repeat n number of times in the output String.","Input1:            Stackroute
+
+Input2:            5",Output1:           Stackrouterouterouterouterouteroute,Beginner,String,https://github.com/aroranamita09/AppendAString.git
+38,Squares in N*N Chessboard,"Write a program to create a ChessBoard pattern with the help of multidimensional array, where WWrepresents white color and BB represents Black color.",Input:," My Chess Board
+      WW|BB|WW|BB|WW|BB|WW|BB|
+      BB|WW|BB|WW|BB|WW|BB|WW|
+      WW|BB|WW|BB|WW|BB|WW|BB|
+      BB|WW|BB|WW|BB|WW|BB|WW|
+      WW|BB|WW|BB|WW|BB|WW|BB|
+      BB|WW|BB|WW|BB|WW|BB|WW|
+      WW|BB|WW|BB|WW|BB|WW|BB|
+      BB|WW|BB|WW|BB|WW|BB|WW|","Intermediate
+",",Number Theory,Permutations",https://github.com/aroranamita09/SquaresInN-NChessboard.git
+39,Return two prime numbers,"Given an even number ( greater than 2 ), return two prime numbers whose sum will be equal to given number. There are several combinations possible. Print only first such pair. 
+
+NOTE: A solution will always exist, read Goldbach�s conjecture.
+
+Also, solve the problem in linear time complexity, i.e., O(n).","The first line contains T, the number of test cases. The following T lines consist of a number each, for which we'll find two prime numbers.
+
+Note: The number would always be an even number.
+Input:
+
+5
+74
+1024
+66 
+8
+9990","For every test case print two prime numbers space separated, such that the smaller number appears first. Answer for each test case must be in a new line.
+Output:
+
+3 71
+3 1021
+5 61
+3 5
+17 9973",Advansed,",Number Theory,Permutations",https://github.com/aroranamita09/ReturnTwoPrimeNumbers.git
+40,Numbers with one absolute difference,"Given a number N. The task is to print all the numbers less than or equal to N in increasing order, with the fact that absolute difference between any adjacent digits of number should be 1.","The first line of input contains an integer T denoting the number of test cases. Then T test cases follow. Each test case contains an integer N.
+Input:
+2
+20
+9","In new line print all the required numbers. if there is no such number less than or equal to N then print ""-1"".
+Output:
+10 12
+-1
+
+",Advansed,String,https://github.com/aroranamita09/NumbersWithOneAbsoluteDifference.git
+41,Count the subarrays having product less than k,"Given an array of positive numbers, the task is to find the number of possible contiguous subarrays having product less than a given number K.","The first line of input contains an integer T denoting the number of test cases. Then T test cases follow. Each test case consists of two lines. First line of each test case contains two integers N & K and the second line contains N space separated array elements.
+Input:
+2
+4 10
+1 2 3 4
+7 100
+1 9 2 8 6 4 3
+Input : A[]={1, 2,3,4} 
+        K = 10
+","For each test case, print the count of required subarrays in new line.
+
+Output:
+7
+16
+Output : 7
+The contiguous subarrays are {1}, {2}, {3}, {4}
+{1, 2}, {1, 2, 3} and {2, 3} whose count is 7.",Advansed,Array,https://github.com/aroranamita09/Count-the-SubarraysHavingProductLessThanK.git
+42,Longest Palindromic Substring in Linear Time,"Given a string, find the longest substring which is palindrome in Linear time O(N).","The first line of input contains an integer T denoting the no of test cases . Then T test cases follow. The only�line of each test case contains a string.
+Input:
+2
+babcbabcbaccba
+Forgeeksskeegfor","For each test case print the�Longest Palindromic Substring.
+Output:
+abcbabcba
+Geeksskeeg",Advansed,String,https://github.com/aroranamita09/Longest-PalindromicSubstringInLinearTime.git
+43,Namita's String Challenge,"Namita is a brilliant girl and loves to play with strings. She challenges everyone to beat her in string challenges and is still unbeaten. She has created a challenge based on lower-case alphabets and challenges you to beat her if you can.
+
+String Challenge:
+
+Provided a string of lower-case alphabets of length N, list all the distinct substrings possible in the similar manner as in a dictionary (indexing is 1 based).  Q number of queries needs to be answered where each query is represented by a number K. The answer of a query will be the number of characters (distinct) present in the substring present at  the Kth index in the list. For the query where the value of k is greater than the number of substrings (distinct) possible in the string, answer of the query will be -1.","First line of the input consist of an integer T denoting the number of test cases.Each test case consists of Q+2 number of lines, where Q is number of queries asked. First line of each test case consists of two space separated integers N(length of string) and Q( Number of Queries). Second line of each test case consist of an input string. Next Q lines of each test case consists of a number K.
+Input:
+1
+3 6
+gfg
+1
+2
+3
+4
+5
+6
+
+","Output:
+
+Corresponding to each test case, print the answer to each query in a new line.
+Sample Output:
+
+1
+2
+1
+2
+2
+-1",Advansed,String,https://github.com/aroranamita09/Namita-sStringChallenge.git
+44,Generalised Fibonacci numbers,"Consider the generalized Fibonacci number G, which is dependent on a, b and c as follows :-
+G(1) = 1
+G(2) = 1
+G(n) = aG(n-1) + bG(n-2) + c.
+Your task is to calculate G(n)%m for given values of n and m.
+","Input:
+The first line of input contains an integer T denoting the no of test cases. Then T test cases follow. Each test case contains five space separated values a, b, c, n, m respectively.
+Input:
+2
+3 3 3 3 5
+2 2 2 4 100","Output:
+4
+16",Advansed,String,https://github.com/aroranamita09/GeneralisedFibonacciNumbers.git
+45,Repetitive Addition Of Digits,"Given a non-negative integer num, repeatedly add all its digits until the result has only one digit.
+Explanation:  For example, if we conisder 98, we get 9+8  = 17 after first addition. Then we get 1+7 = 8.  We stop at this point because we are left with one digit.
+
+","The first line contains 'T' denoting the number of testcases. Then follows description of testcases. The next T lines contains a single integer N denoting the value of N.
+Input :
+2
+1
+98","Output :
+1
+8",Intermediate,",Number Theory,Permutations",https://github.com/aroranamita09/RepetitiveAdditionOfDigits.git
+46,Spirally traversing a matrix,Given a 2D matrix of size M*N. Traverse and print the matrix in spiral form.,"Input: The first line of the input contains a single integer T, denoting the number of test cases. Then T test cases follow. Each testcase has 2 lines. First line contains M and N respectively separated by a space. Second line contains M*N values separated by spaces.
+Input:
+1
+4 4
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16","Output:
+Elements when travelled in Spiral form, will be displayed in a single line.
+Output:
+1 2 3 4 8 12 16 15 14 13 9 5 6 7 11 10",Intermediate,Array,https://github.com/aroranamita09/Spirally-TraversingAMatrix.git
+47,Length of the longest substring,"Given a string, find the length of the longest substring without repeating characters. For example, the longest substrings without repeating characters for �ABDEFGABEF� are �BDEFGA� and �DEFGAB�, with length 6.","Input:
+The first line of input contains an integer T denoting the number of test cases.
+The first line of each test case is str.","Output:
+
+Print the length of longest substring.",Intermediate,String,https://github.com/aroranamita09/LengthOfTheLongestSubstring.git
+48,Merge Two Sorted Arrays,"Given two sorted arrays P[] and Q[] in non-decreasing order with size X and Y. The task is to merge the two sorted arrays into one sorted array (in non-decreasing order).
+
+Note: Expected time complexity is O((X+Y) log(X+Y)). Try not to use extra space.
+Explanation:
+Testcase 1: After merging two non-decreasing arrays, we have, 0 1 2 3 5 6 7 8 9.","Input:
+First line contains an integer T, denoting the number of test cases. First line of each test case contains two space separated integers X and Y, denoting the size of the two sorted arrays. Second line of each test case contains X space separated integers, denoting the first sorted array P. Third line of each test case contains Y space separated integers, denoting the second array Q.
+Input:
+1
+4 5
+1 3 5 7
+0 2 6 8 9","Output:
+For each test case, print (X + Y) space separated integer representing the merged array.
+Output:
+0 1 2 3 5 6 7 8 9",Advansed,String,https://github.com/aroranamita09/MergeTwoSortedArrays.git
+49,One's Complement,"Given an integer n, write a program to find the one�s complement of the integer.
+
+","Input:
+The first line of the input contains an integer T denoting number of test cases. Each of the following T lines will contain an integer N.
+Input:
+2
+5
+255","Output:
+For each test case, print one's complement of N in a new line.
+Output:
+2
+0",Advansed,Object,https://github.com/aroranamita09/One-s-Complement.git
+50,Sort String Array,"Write a program that sets up a String variable containing a paragraph of text of your choice.
+a. Extract the words from the text and sort them into alphabetical order.   
+b. Display the sorted list of words.","Input
+
+ac b ccd sde tba zsw","
+
+b ac tba sde zsw ccd",Advansed,Object ,https://github.com/aroranamita09/Tom-and-Jerry.git

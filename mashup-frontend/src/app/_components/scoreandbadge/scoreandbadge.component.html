@@ -1,0 +1,27 @@
+<br>
+<br>
+<br>
+<p id="totalscore">Your Total Score is : {{userData['totalScore']}}</p>
+<div [ngSwitch]= userData.totalScore>
+    <ng-template [ngSwitchCase]="10">
+    <mat-card class="example-card">
+        <mat-card-content>
+            <img mat-card-image src="../../../assets/badge.jpg" alt="Badge-image">
+        </mat-card-content>
+      </mat-card>
+    </ng-template>
+<ng-template [ngSwitchCase]="20">
+        <mat-card class="example-card">
+            <mat-card-content>
+                <img mat-card-image src="../../../assets/silver.jpg" alt="silver-image">
+            </mat-card-content>
+          </mat-card>
+</ng-template>
+<ng-template [ngSwitchCase]="30">
+            <mat-card class="example-card">
+                <mat-card-content>
+                    <img mat-card-image src="../../../assets/gold.jpeg" alt="gold-image">
+                </mat-card-content>
+              </mat-card>
+  </ng-template>
+</div>

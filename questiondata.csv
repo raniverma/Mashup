@@ -1,0 +1,52 @@
+questionId,questionTitle,difficulty,tags
+1,ArrayListOperation,Intermediate,If-else statement
+2,Check-Palindrome and reverse it,Beginner,While
+3,PowerOfFour,Beginner,Switch Statement
+4,Member variables,Beginner,Loops
+5,Rotate Arrays,Beginner,Do While
+6,EvenNumTest,Beginner,While
+7,Average,Beginner,Sort Algorithms
+8,Factorial,Beginner,If-else statement
+9,Ugly Numbers,Intermediate,Graph
+10,Test the range,Beginner,Graph
+11,Vowel or Consonant,Beginner,While
+12,Pattern Matching,Intermediate,ArrayList
+13,Add numbers of a string,Beginner,ArrayList
+14,Judge a character,Intermediate,If-else statement
+15,Sort the pattern,Beginner,Loops
+16,GuessTheTarget,Intermediate,For Statement
+17,StringModifications,Beginner,For Statement
+18,Update collections,Beginner,Conditional Statements
+19,Adding Ones,Intermediate,Conditional Statements
+20,Sort the collections,Intermediate,Cyclic Graph
+21,Frequency of character,Beginner,Cyclic Graph
+22,Shuffle the characters,Beginner,Acyclic Graph
+23,Sort a string ,Intermediate,Acyclic Graph
+24,Transpose string,Beginner,Sort Algorithms
+25,Implement Regular Expression,Beginner,Sort Algorithms
+26,Multiple Occurence of word in string,Intermediate,If-else statement
+27,List Operations,Beginner,While
+28,Palindrome,Beginner,Switch Statement
+29,ConsecutiveDigits,Beginner,Loops
+30,Conditional-check,Beginner,Do While
+31,Pattern Printing,Beginner,While
+32,Find Number of Numbers,Beginner,Sort Algorithms
+33,Friendly Array,Beginner,If-else statement
+34,Sort,Beginner,Graph
+35,Remove Vowels From Loop,Intermediate,Graph
+36,Reverse a String,Beginner,Sort Algorithms
+37,Append a string,Beginner,ArrayList
+38,Squares in N*N Chessboard,"Intermediate
+",ArrayList
+39,Return two prime numbers,Advanced,If-else statement
+40,Numbers with one absolute difference,Advanced,Loops
+41,Count the subarrays having product less than k,Advanced,For Statement
+42,Longest Palindromic Substring in Linear Time,Advanced,For Statement
+43,Namita's String Challenge,Advanced,Conditional Statements
+44,Generalised Fibonacci numbers,Advanced,Conditional Statements
+45,Repetitive Addition Of Digits,Intermediate,Cyclic Graph
+46,Spirally traversing a matrix,Intermediate,Switch Statement
+47,Length of the longest substring,Intermediate,Loops
+48,Merge Two Sorted Arrays,Advanced,Do While
+49,One's Complement,Advanced,While
+50,Sort String Array,Advanced,Sort Algorithms

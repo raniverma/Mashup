@@ -1,0 +1,121 @@
+<nav class="fixed-top">
+  <app-navbar></app-navbar>
+</nav>
+<br>
+<br>
+<br>
+<div align = "center">
+  <h1>Post your {{ title }}!</h1>
+  <h1 *ngIf="isExist | async as value" >data is : {{ xyz }}</h1>
+  <form [formGroup]="questionForm" (ngSubmit)="submit()">
+    <div class="form-group">
+      <input
+        type="text"
+        formControlName="questionTitle"
+        class="form-control"
+        id="questionTitle"
+        placeholder="Write Title of Question.."
+        [ngClass]="{ 'is-invalid': submitted && f.questionTitle.errors }"
+      />
+      <div *ngIf="submitted && f.questionTitle.errors" class="invalid-feedback">
+        <div *ngIf="f.questionTitle.errors.required">
+          Question Title is required
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <textarea
+        class="form-control"
+        formControlName="questionDescription"
+        id="questionDescription"
+        rows="7"
+        placeholder="Write Question Description here.."
+        [ngClass]="{ 'is-invalid': submitted && f.questionDescription.errors }"
+      ></textarea>
+      <div
+        *ngIf="submitted && f.questionDescription.errors"
+        class="invalid-feedback"
+      >
+        <div *ngIf="f.questionDescription.errors.required">
+          Question Title is required
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <textarea
+        class="form-control"
+        formControlName="inputFormat"
+        id="inputFormat"
+        rows="7"
+        placeholder="Write input format here.."
+        [ngClass]="{ 'is-invalid': submitted && f.inputFormat.errors }"
+      ></textarea>
+      <div *ngIf="submitted && f.inputFormat.errors" class="invalid-feedback">
+        <div *ngIf="f.inputFormat.errors.required">
+          input format is required
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <textarea
+        class="form-control"
+        formControlName="outputFormat"
+        id="outputFormat"
+        rows="7"
+        placeholder="Write output format here.."
+        [ngClass]="{ 'is-invalid': submitted && f.outputFormat.errors }"
+      ></textarea>
+      <div *ngIf="submitted && f.outputFormat.errors" class="invalid-feedback">
+        <div *ngIf="f.outputFormat.errors.required">
+          output format is required
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <select
+        class="form-control"
+        formControlName="difficulty"
+        id="difficulty"
+        placeholder="Select difficulty level..."
+        [ngClass]="{ 'is-invalid': submitted && f.difficulty.errors }"
+      >
+        <option *ngFor="let level of levels" [value]="level">{{
+          level
+        }}</option>
+        <div *ngIf="submitted && f.difficulty.errors" class="invalid-feedback">
+          <div *ngIf="f.difficulty.errors.required">
+            Question Title is required
+          </div>
+        </div>
+      </select>
+    </div>
+    <div class="form-group">
+      <input
+        type="text"
+        formControlName="tags"
+        class="form-control"
+        id="tags"
+        placeholder="Write tags for Question like Core java,Collection"
+      />
+    </div>
+    <div class="form-group">
+      <input
+        type="text"
+        formControlName="gitUrl"
+        class="form-control"
+        id="gitUrl"
+        placeholder="Enter git Url of testcases.."
+      />
+    </div>
+      {{username}}
+    <button type="submit" class="btn btn-success">Post Question</button>
+    <a routerLink="/home" class="btn btn-link">Cancel</a>
+    &nbsp;<br>
+    &nbsp;<br>
+    &nbsp;<br>
+    &nbsp;<br>
+    &nbsp;<br>
+    &nbsp;
+
+  </form>
+</div>

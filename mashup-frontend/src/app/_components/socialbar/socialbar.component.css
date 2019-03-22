@@ -1,0 +1,21 @@
+
+
+.items a {
+    color: white;
+    font-size: 1.4rem; 
+}
+.items {
+	display: flex;
+    flex-wrap: wrap;
+    
+}
+.items .item {
+	flex: 1 0 25%;
+  box-sizing: border-box;
+  background: #252525;
+  color: #171e42;
+  padding: 10px;
+}
+.item{
+    text-align: center;
+}

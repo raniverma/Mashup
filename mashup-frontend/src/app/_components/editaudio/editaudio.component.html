@@ -1,0 +1,64 @@
+<nav class="fixed-top">
+<app-navbar></app-navbar>
+</nav>
+<br>
+<br>
+<br>
+<meta
+  name="viewport"
+  content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"
+/>
+
+&nbsp;<br>&nbsp;<br>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-7" container-diff>
+      <ngx-monaco-editor
+        id="editor2"
+        class="my-code-editor"
+        [ngStyle]="styleb"
+        [options]="editorOptions"
+        [(ngModel)]="code"
+        (onInit)="onInit($event)"
+      ></ngx-monaco-editor>
+      <audio class="audiocss" controls style="width: 100%;" #audio>
+        <source src="{{ audiopath }}" type="audio/mpeg" />
+      </audio>
+      &nbsp;<br>
+      <form
+        class="form-inline my-2 my-lg-0 hello"
+        #createForm="ngForm"
+        (ngSubmit)="submit()"
+      >
+        <button
+          class="btn btn-outline-success my-2 my-sm-0"
+          type="submit"
+          id="button-addon2"
+          style="font-size:1.6rem"
+        >
+          Run
+        </button>&nbsp;&nbsp;&nbsp;&nbsp;
+        <button style="font-size:1.6rem" class="btn btn-outline-success my-2 my-sm-0" (click)="startTimer(audio)">Start</button>
+      </form>
+      <br>&nbsp;<br>&nbsp;<br>
+    </div>
+    <div class="col-sm-5">
+      <table
+        id="conversation"
+        class="table table-striped"
+        style="margin-top: 20px;"
+      >
+        <thead>
+          <tr>
+            <th style="font-size:2rem">Results</th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let greeting of greetings">
+          <tr>
+            <td [ngStyle]="colorg" style="color:red">{{ greeting }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

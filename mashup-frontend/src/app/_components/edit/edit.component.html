@@ -1,0 +1,96 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!--Navbar-->
+<nav class="fixed-top">
+<app-navbar></app-navbar>
+</nav>
+<!--Navbar-->
+<br>
+<br>
+<br>
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-5" style="padding-left:5vw;padding-top:5vh;">
+            <div class="row font-weight-bold " >
+
+                <h2 style="margin-bottom:2rem">{{questionTitle}}</h2><app-voting [question]=questionId></app-voting>
+                <mat-divider></mat-divider>
+            </div>
+            <div class="row">
+                <p class="text-justify ">
+                    {{questionDescription}}
+                </p>
+                <br>
+                <mat-divider></mat-divider>
+            </div>
+            <ul style="padding:0%; margin-bottom:2rem">
+                <h5>Input</h5>
+                <div *ngFor="let inp of inputFormat"> 
+                    <li>{{inp}}</li>
+                </div>
+                <br>
+
+            </ul>
+            <mat-divider></mat-divider>
+
+
+            <ul style="padding:0%; margin-top:2rem">
+                <h5>Output</h5>
+                <div *ngFor="let out of outputFormat"> 
+                    <li>{{out}}</li>
+
+                </div>
+                <br>
+
+
+            </ul>
+           
+
+        </div>
+        <div class="col-sm-7" style="margin-top:2rem">
+            <select (change)="selectChangeHandler($event)">
+                <option value="java">Java</option>
+                <option value="python">Python</option>
+                <option value="cpp">C++</option>
+                <option value="c">C</option>
+
+            </select>
+            <!-- Editor-->
+            <ngx-monaco-editor id="editor2" class="my-code-editor" [options]="editorOptions" [(ngModel)]="code"
+                (onInit)="onInit($event)"></ngx-monaco-editor>
+
+            <div class="container" style="display:flex;flex-direction:column">
+            <form class="form-inline my-2 my-lg-0 hello" >
+                <button type="button" class="btn btn-outline-success my-2 my-sm-0"(click)=submit() style="margin:20px;">Compile </button>
+                <div *ngIf="statement">
+                <button class="btn btn-outline-success my-2 my-sm-0" (click)=sendDataToSubmissionService() >Submit</button>  
+                </div>
+            </form>
+                  
+            <!-- Results -->
+            <table id="conversation" class="table" style="margin-top: 20px;">                   
+                <div *ngIf="flag" class="spinner-border" style="width: 3rem; height: 3rem;" role="status">
+                        <span class="sr-only">Loading...</span>
+                </div>
+                <thead>
+                    <tr *ngIf="flag2">
+                        <th style="font-size:1.6rem">Results</th>
+                    </tr>
+                    
+                   
+                </thead>
+                <div >
+                <tbody *ngFor="let greeting of greetings">
+                    <tr>
+                        <td [ngStyle]="colorg" style="color:red">{{greeting}}</td>
+                    </tr>
+                </tbody>
+                </div>
+            </table>
+            </div>
+        </div>
+    </div>
+</div>
+

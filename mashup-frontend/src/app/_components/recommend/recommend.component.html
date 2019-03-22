@@ -1,0 +1,42 @@
+<nav class="fixed-top">
+  <app-navbar></app-navbar>
+</nav>
+<br>
+<br>
+<br>
+<br>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<div class="container" style="text-align:center">
+  <div class="row" style="text-align:center">
+    <div class="col-md-12" style="font-size:22px">
+      <h1>Let's dive into the world of Coding...</h1>
+      <hr size="30">
+    </div>
+    <br /><br /><br /><br />
+  </div>
+  <div class="row" style="text-align:center">
+      <div class="card-deck">
+      <div *ngFor="let question of fetch" class="col-md-4">
+
+        <div class="card">
+          <div class="card-body">
+            <h2 class="card-title">{{ question.questionTitle }}</h2>
+            <div class="card-footer">
+            <p class="card-text">Related to: <small style="color:green;font-size:1.8rem">{{ question.tags }}</small></p>
+            <p class="card-text">Of level: <small style="color:red">{{ question.difficulty }}</small></p>
+            <button
+              type="button"
+              class="btn btn-primary"
+              (click)="openEditor(question.questionId)"
+              style="font-size:1.4rem"
+            >
+              ATTEMPT
+            </button>
+          </div>
+          </div>
+        </div>
+        <br />
+      </div>
+    </div>
+  </div>
+</div>

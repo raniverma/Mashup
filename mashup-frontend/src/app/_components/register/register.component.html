@@ -1,0 +1,86 @@
+<nav class="fixed-top">
+  <app-navbar></app-navbar>
+</nav>
+<br>
+<br> 
+<br>
+<br> 
+<br>
+<div id="maindiv" class="container">
+<div class="row col-lg-12">
+  <div class="col-lg-3">
+  </div>
+  <div class="col-lg-6" style="font-size:1.6rem">
+    <mat-horizontal-stepper labelPosition="bottom" #stepper>
+      <mat-step [stepControl]="firstFormGroup">
+        <form [formGroup]="firstFormGroup">
+          <ng-template matStepLabel style="color: pink">Please provide details</ng-template>
+          <mat-form-field>
+            <input matInput placeholder="First name" formControlName="firstName" required>
+          </mat-form-field>
+          <br>
+          <mat-form-field>
+            <input matInput placeholder="Last name" formControlName="lastName" required>
+          </mat-form-field>
+          <br>
+          <mat-form-field>
+            <input matInput placeholder="Email Id" formControlName="emailId" required>
+          </mat-form-field>
+          <br>
+          <mat-form-field>
+            <input matInput placeholder="Username" formControlName="username" required>
+          </mat-form-field>
+          <br>
+          <mat-form-field>
+            <input type="password" matInput placeholder="Password" formControlName="password" required>
+          </mat-form-field>
+          <br>
+          <mat-form-field>
+            <input matInput placeholder="Interests" formControlName="interest" required>
+          </mat-form-field>
+          <br>
+          <div>
+            <button mat-raised-button color="primary" matStepperNext>Next</button>
+          </div>
+        </form>
+      </mat-step>
+      <mat-step [stepControl]="secondFormGroup" optional>
+        <form [formGroup]="secondFormGroup" (ngSubmit)="onSubmit()">
+          <ng-template matStepLabel>Fill out optional stuffs</ng-template>
+          <mat-form-field>
+            <input matInput placeholder="Gender" formControlName="gender">
+          </mat-form-field>
+          <br>
+          <mat-form-field>
+            <input matInput placeholder="Age" formControlName="age">
+          </mat-form-field>
+          <br>
+          <mat-form-field>
+            <input matInput placeholder="College Name" formControlName="college">
+          </mat-form-field>
+          <br>
+          <mat-form-field>
+            <input matInput placeholder="Discipline" formControlName="discipline">
+          </mat-form-field>
+          <br>
+          <mat-form-field>
+            <input matInput placeholder="Course" formControlName="course">
+          </mat-form-field>
+          <br>
+          <mat-form-field>
+            <input matInput placeholder="Current Company" formControlName="company">
+          </mat-form-field>
+          <br>
+          <div>
+            <button style="margin-right:20px" mat-raised-button color="accent" matStepperPrevious>Back</button>
+            <button mat-raised-button color="primary" matStepperNext>Next</button>
+          </div>
+        </form>
+      </mat-step>
+    </mat-horizontal-stepper>
+  </div>
+  <div class="col-lg-3">
+
+  </div>
+</div>
+</div>

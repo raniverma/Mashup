@@ -1,0 +1,25 @@
+<div class="all">
+<nav class="fixed-top">
+  <app-navbar></app-navbar>
+</nav>
+<br>
+<br>
+<br>
+<br>
+<div class="container" style="text-align: center">
+  <h2>Are you looking for ...</h2>
+  <div class="card-deck">
+  <div *ngFor="let question of fetch" class="col-md-4">
+      <div class="card">
+          <div class="card-body">
+            <h3 class="card-title">{{question.questionTitle}}</h3>
+            <div class="card-footer">
+            <p class="card-text">Related to: <small style="color:green;font-size:1.8rem">{{ question.tags }}</small></p>
+            <p class="card-text">Of level: <small style="color:red">{{ question.difficulty }}</small></p>
+            <button class="btn btn-primary" style="font-size:1.4rem" [routerLink]="['/execution',question.questionId]">ATTEMPT</button>
+            </div>
+          </div>
+    </div>    
+  </div>
+</div>
+</div>

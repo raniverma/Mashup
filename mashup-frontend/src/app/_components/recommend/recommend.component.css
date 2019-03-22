@@ -1,0 +1,41 @@
+p{
+  font-size: 15px;
+}
+.col-md-4{
+  width: 500px;
+  height: auto;
+  background-color: rgb(25, 158, 184)
+}
+
+.btn{
+  justify-content: baseline;
+}
+h1{
+  margin: 40px;
+  color: rgb(25, 158, 184)
+}
+.card{
+  margin-top: 20px;
+  margin-bottom: 10px;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.card-body{
+  height: 300px;
+}
+
+.card-deck{
+  background-color: rgb(25, 158, 184);
+}
+
+.card-title {
+  height: 150px;
+}
+
+.card-footer{
+  padding: 0;
+  margin: 0;
+}

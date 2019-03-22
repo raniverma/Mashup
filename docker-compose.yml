@@ -1,0 +1,385 @@
+version: "2.1"
+services:
+
+  apigateway:
+    image: zuul-service
+    build: zuul-gatewayservice/
+    container_name: apigateway
+    restart: always
+    network_mode: host
+    hostname: localhost
+    depends_on:
+      eurekaserver:
+        condition: service_healthy
+      config-server:
+        condition: service_healthy
+    ports:
+      - 8092:8092
+    volumes:
+      - /DB/resources:/DB/resources
+    healthcheck:
+      test: "exit 0"
+
+  eurekaserver:
+    image: eureka-service:latest
+    build: eureka-server/
+    container_name: eureka
+    restart: always
+    network_mode: host
+    hostname: localhost
+    ports:
+      - 8093:8093
+    healthcheck:
+      test: "exit 0"
+
+  config-server:
+    image: config-server
+    build: ./config-server/
+    container_name: configserver
+    restart: always
+    network_mode: host
+    hostname: localhost
+    ports:
+      - 8032:8032
+    expose:
+      - 8032
+    healthcheck:
+      test: "exit 0"
+
+  mongo:
+    image: mongo:3.4-jessie
+    ports:
+      - 27017:27017
+    expose:
+      - 27017
+    container_name: mongo
+    network_mode: host
+    hostname: localhost
+    restart: always
+    volumes:
+      - /DB/mongo:/data/db
+    healthcheck:
+      test: "exit 0"
+
+  neo4j:
+    image: neo4j:latest
+    ports:
+      - 7474:7474
+      - 7687:7687
+    container_name: neo4j
+    network_mode: host
+    hostname: localhost
+    restart: always
+    volumes:
+      - /DB/neo4j/data:/data
+      - /DB/neo4j/import:/import
+    healthcheck:
+      test: "exit 0"
+
+  mysql:
+    image: mysql:5.7
+    ports:
+      - 3306:3306
+    container_name: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: springbootdb
+      MYSQL_PASSWORD: root
+      MYSQL_USER: root
+    network_mode: "host"
+    hostname: localhost
+    restart: always
+    volumes:
+      - /DB/mysql:/var/lib/mysql
+    healthcheck:
+      test: "exit 0"
+
+  zookeeper:
+    image: wurstmeister/zookeeper
+    container_name: zookeeper
+    network_mode: "host"
+    hostname: localhost
+    ports:
+      - 2181:2181
+    restart: always
+    healthcheck:
+      test: "exit 0"
+
+  kafka:
+    image: wurstmeister/kafka
+    container_name: kafka
+    network_mode: "host"
+    hostname: localhost
+    ports:
+      - 9092:9092
+    depends_on:
+      zookeeper:
+        condition: service_healthy
+    environment:
+      KAFKA_ZOOKEEPER_CONNECT: 'localhost:2181'
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://localhost:9092
+      KAFKA_LISTENERS: PLAINTEXT://localhost:9092
+      KAFKA_CREATE_TOPICS: "AuthMessage, QuestionMessage, SubmissionMessage"
+    restart: always
+    healthcheck:
+      test: "exit 0"
+
+  registration-service:
+    image: registration-service
+    build: ./registration-service/
+    container_name: registration
+    restart: always
+    network_mode: host
+    hostname: localhost
+    depends_on:
+      mongo:
+        condition: service_healthy
+      config-server:
+        condition: service_healthy
+      apigateway:
+        condition: service_healthy
+      eurekaserver:
+        condition: service_healthy
+      kafka:
+        condition: service_healthy
+    ports:
+      - 8020:8020
+    healthcheck:
+      test: "exit 0"
+
+  authentication-service:
+    image: authentication-service
+    build: ./authentication-service/
+    container_name: authentication
+    restart: always
+    network_mode: host
+    hostname: localhost
+    depends_on:
+      mysql:
+        condition: service_healthy
+      config-server:
+        condition: service_healthy
+      apigateway:
+        condition: service_healthy
+      eurekaserver:
+        condition: service_healthy
+      kafka:
+        condition: service_healthy
+    ports:
+      - 8021:8021
+    healthcheck:
+      test: "exit 0"
+
+  question-service:
+    image: question-service
+    build: ./question-service/
+    container_name: question
+    restart: always
+    network_mode: host
+    hostname: localhost
+    depends_on:
+      mongo:
+        condition: service_healthy
+      config-server:
+        condition: service_healthy
+      apigateway:
+        condition: service_healthy
+      eurekaserver:
+        condition: service_healthy
+      kafka:
+        condition: service_healthy
+    volumes:
+      - /DB/resources:/DB/resources
+    ports:
+      - 8022:8022
+    healthcheck:
+      test: "exit 0"
+
+  recommendation-service:
+    image: recommendation-service
+    build: ./recommendation-service/
+    container_name: recommendation
+    restart: always
+    network_mode: host
+    hostname: localhost
+    depends_on:
+      neo4j:
+        condition: service_healthy
+      config-server:
+        condition: service_healthy
+      apigateway:
+        condition: service_healthy
+      eurekaserver:
+        condition: service_healthy
+      kafka:
+        condition: service_healthy
+    ports:
+      - 8023:8023
+    healthcheck:
+      test: "exit 0"
+
+  userprofile-service:
+    image: userprofile-service
+    build: ./userprofile-service/
+    container_name: userprofile
+    restart: always
+    network_mode: host
+    hostname: localhost
+    depends_on:
+      mongo:
+        condition: service_healthy
+      config-server:
+        condition: service_healthy
+      apigateway:
+        condition: service_healthy
+      eurekaserver:
+        condition: service_healthy
+      kafka:
+        condition: service_healthy
+    ports:
+      - 8024:8024
+    healthcheck:
+      test: "exit 0"
+
+  execution-engine:
+    image: execution-engine
+    build: ./execution-engine/
+    container_name: execution
+    restart: always
+    network_mode: host
+    hostname: localhost
+    depends_on:
+      config-server:
+        condition: service_healthy
+      apigateway:
+        condition: service_healthy
+      eurekaserver:
+        condition: service_healthy
+    ports:
+      - 8025:8025
+    volumes:
+      - /DB/script:/DB/script
+      - /DB/users:/DB/users
+      - /usr/local/lib/node_modules/nodemon:/usr/local/lib/node_modules/nodemon
+    healthcheck:
+      test: "exit 0"
+
+  search-service:
+    image: search-service
+    build: ./search-service/
+    container_name: search
+    restart: always
+    network_mode: host
+    hostname: localhost
+    depends_on:
+      config-server:
+        condition: service_healthy
+      apigateway:
+        condition: service_healthy
+      eurekaserver:
+        condition: service_healthy
+    ports:
+      - 8026:8026
+    healthcheck:
+      test: "exit 0"
+
+  score-badge-service:
+    image: score-badge-service
+    build: ./score-badge-service/
+    container_name: score-badge
+    restart: always
+    network_mode: host
+    hostname: localhost
+    depends_on:
+      mongo:
+        condition: service_healthy
+      config-server:
+        condition: service_healthy
+      apigateway:
+        condition: service_healthy
+      eurekaserver:
+        condition: service_healthy
+      kafka:
+        condition: service_healthy
+    ports:
+      - 8027:8027
+    healthcheck:
+      test: "exit 0"
+
+  voting-service:
+    image: voting-service
+    build: ./voting-service/
+    container_name: voting
+    restart: always
+    network_mode: host
+    hostname: localhost
+    depends_on:
+      mongo:
+        condition: service_healthy
+      config-server:
+        condition: service_healthy
+      apigateway:
+        condition: service_healthy
+      eurekaserver:
+        condition: service_healthy
+      kafka:
+        condition: service_healthy
+    ports:
+      - 8028:8028
+    healthcheck:
+      test: "exit 0"
+
+  submission-service:
+    image: submission-service
+    build: ./submission-service/
+    container_name: submission
+    restart: always
+    network_mode: host
+    hostname: localhost
+    depends_on:
+      mongo:
+        condition: service_healthy
+      config-server:
+        condition: service_healthy
+      apigateway:
+        condition: service_healthy
+      eurekaserver:
+        condition: service_healthy
+      kafka:
+        condition: service_healthy
+    ports:
+      - 8029:8029
+    healthcheck:
+      test: "exit 0"
+
+  js-execution-engine:
+    image: js-execution-engine
+    build: ./js-execution-engine/
+    container_name: js-execution
+    restart: always
+    network_mode: host
+    hostname: localhost
+    ports:
+      - 8031:8031
+    depends_on:
+      config-server:
+        condition: service_healthy
+    volumes:
+      - /DB/script:/DB/script
+      - /DB/js-boilerplate:/DB/js-boilerplate
+    healthcheck:
+      test: "exit 0"
+
+  mashup-frontend:
+    image: mashup-frontend
+    build: ./mashup-frontend/
+    container_name: frontend
+    restart: always
+    network_mode: host
+    hostname: localhost
+    ports:
+      - 8030:8030
+    expose:
+      - 8030
+    healthcheck:
+      test: "exit 0"

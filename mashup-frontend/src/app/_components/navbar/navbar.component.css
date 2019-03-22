@@ -1,0 +1,42 @@
+.fill-remaining-space {
+    /*This fills the remaining space, by using flexbox.
+   Every toolbar row uses a flexbox row layout. */
+   flex: 1 1 auto;
+ }
+ 
+ #logoimage{
+    width:30px;
+  }
+
+  #search{
+    margin: 0%;
+    background-color: whitesmoke;
+    background-position: center top;
+ }
+ 
+ img{
+    width: 70px;
+    padding-bottom: 20px;
+ }
+ app-searchservice{
+    padding-right: 60px;
+    padding-bottom: 10px;
+ }
+ a{
+    color: white;
+ }
+ .con{
+    color: rgba(0,0,0,.87);
+ }
+ .close {
+   top: 20%;
+   right: 4%;
+   font-family: Roboto,"Helvetica Neue",sans-serif;
+   font-size: 14px;
+   font-weight: 500;
+   justify-content: flex-end;
+ }
+ .mat-toolbar.mat-primary{
+    background: #3997d6;
+    color: #fff;
+ }

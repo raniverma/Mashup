@@ -1,0 +1,54 @@
+<nav class="fixed-top">
+  <app-navbar></app-navbar>
+</nav>
+<br><br><br><br><br><br><br><br>
+<mat-form-field>
+  <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+</mat-form-field>
+
+<div class="mat-elevation-z8">
+  <table mat-table [dataSource]="dataSource" matSort>
+
+    <!-- ID Column -->
+    <ng-container matColumnDef="questionId">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Question ID </th>
+      <td mat-cell *matCellDef="let row"> {{row.questionId}} </td>
+    </ng-container>
+
+    <!-- Progress Column -->
+    <ng-container matColumnDef="questionTitle">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Question Title </th>
+      <td mat-cell *matCellDef="let row"> {{row.questionTitle}} </td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="testCasePassed">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Test CasePassed </th>
+      <td mat-cell *matCellDef="let row"> {{row.testCasePassed}} </td>
+    </ng-container>
+
+    <!-- Color Column -->
+    <ng-container matColumnDef="totalTestCases">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Total TestCases </th>
+      <td mat-cell *matCellDef="let row"> {{row.totalTestCases}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="difficulty">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Difficulty </th>
+      <td mat-cell *matCellDef="let row"> {{row.difficulty}} </td>
+    </ng-container>
+
+    <!-- Color Column -->
+    <ng-container matColumnDef="score">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Score </th>
+      <!-- <td mat-cell *matCellDef="let row"><a mat-raised-button routerLink=".">Solution</a></td> -->
+      <td mat-cell *matCellDef="let row"> {{row.score}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;">
+    </tr>
+  </table>
+
+  <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+</div>

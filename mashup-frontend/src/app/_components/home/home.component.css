@@ -1,0 +1,27 @@
+.post{
+    top: 10;
+    margin-right: 9%;
+    margin-left: 91%;
+}
+.logout{
+    position: absolute;
+    top: 2%;
+    right: 5%;
+    color: red;
+
+
+}
+.execut{
+position: relative;
+margin-right: 10%;
+margin-left: 80%;
+
+}
+
+.userprofile{
+    position: absolute;
+    top: 2%;
+    right: 15%;
+    
+}
+

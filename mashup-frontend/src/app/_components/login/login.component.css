@@ -1,0 +1,46 @@
+.bg-img {
+    /* The image used */
+    background-image: url("/assets/key.jpg");
+  
+    /* Control the height of the image */
+    min-height: 500px;
+    width: 100%;
+    length: 100%;
+    
+  
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+  }
+
+  @media (min-width: 992px){
+  .col-lg-4 {
+      -webkit-box-flex: 0;
+      margin-top: 100px;
+      -ms-flex: 0 0 33.333333%;
+      flex: 0 0 33.333333%;
+      max-width: 33.333333%;
+  }}
+  label{
+    font-size: 20px;
+    color: white;
+  }
+  p{
+    color: white;
+    font-size: 15px;
+  }
+  .form-control {
+    display: block;
+    width: 100%;
+    padding: .375rem .75rem;
+    font-size: 2rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}

@@ -1,0 +1,100 @@
+<nav class="fixed-top">
+  <app-navbar></app-navbar>
+</nav>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<mat-grid-list cols="3" rowHeight="30vh">
+  <mat-grid-tile [colspan]="tiles[0].cols" [rowspan]="tiles[0].rows" [style.background]="tiles[0].color"
+    class="profile">
+    <div class="box" style="width:70%">
+      <div>
+        <mat-card class="card card1" style="display:block;">
+          <img mat-card-image
+            src=""
+            alt="" class="profileimage" width="195px" height="200px" />
+
+          <mat-card-content>
+            <p>{{ profile?.firstName }} {{ profile?.lastName }}</p>
+          </mat-card-content>
+          <p style="opacity:.7;font-size:1.6rem">@ {{ profile?.userName }}</p>
+        </mat-card>
+      </div>
+      <div>
+        <mat-card class="card card2" style="display:block; margin-top: 1vh;">
+          <div [ngSwitch]="profileState">
+            <ng-template [ngSwitchCase]="'currentProfile'">
+              <p>Email Id : {{ profile?.emailId }}</p>
+              <p>Age : {{ profile?.age }}</p>
+              <p>Gender : {{ profile?.gender }}</p>
+              <p>Company : {{ profile?.company }}</p>
+              <p>College : {{ profile?.college }}</p>
+              <p>Course : {{ profile?.course }}</p>
+              <p>Discipline : {{ profile?.discipline }}</p>
+              <p>list {{ profile?.interests.join(", ") }}</p>
+            </ng-template>
+            <ng-template [ngSwitchCase]="'updatingProfile'">
+              <p>Email Id : {{ profile?.emailId }}</p>
+              <p>
+                 <label>Age</label><br>
+                 <input type="text" value =  "{{ profile.age }}" [(ngModel)]="profile.age"/>
+              </p>
+              <p>
+                <label>Gender</label><br>
+                <input type="text" value= "{{ profile.gender }}" [(ngModel)]="profile.gender"/>
+              </p>
+                <p>
+                  <label>Company</label><br>
+                  <input type="text" value= "{{ profile.company }}" [(ngModel)]="profile.company"/>
+
+              </p>
+              <p>
+                  <label>College</label><br>
+                  <input type="text" value = "{{ profile.college }}" [(ngModel)]="profile.college"/>
+              </p>
+              <p>
+                  <label>Course</label><br>
+                  <input type="text" value="{{ profile.course }}" [(ngModel)]="profile.course"/></p>
+              <p>
+                  <label>Discipline</label><br>
+                  <input type="text" value="{{ profile.discipline }}" [(ngModel)]="profile.discipline"/>
+              </p>
+              <p>list {{ profile.interests.join(", ") }}</p>
+            </ng-template>
+          </div>
+          <button mat-raised-button color="accent" (click)="updateProfile()">Update Profile</button><br><br>
+          <button mat-raised-button color="primary" (click)="submitUpdatedProfile(profile.age, profile.gender, profile.company, profile.college, profile.course, profile.discipline)">Submit Changes</button><br><br>
+          <button mat-raised-button color="warn" (click)="deleteUserProfile()">Delete Profile</button>
+        </mat-card>
+      </div>
+    </div>
+  </mat-grid-tile>
+
+  <mat-grid-tile [colspan]="tiles[1].cols" [rowspan]="tiles[1].rows">
+    <app-scoreandbadge></app-scoreandbadge>
+  </mat-grid-tile>
+
+  <mat-grid-tile [colspan]="tiles[2].cols" [rowspan]="tiles[2].rows" style="margin-top:3vh;">
+    <mat-tab-group class="tile1" style="height:100%">
+      <mat-tab label="Question Attempted">
+        <mat-list role="list">
+          <mat-list-item role="listitem" *ngFor="let questionA of profile?.attemptedQuestion | slice:1" [routerLink]="['/submission-component', questionA.questionId]">
+            <i class="fab fa-quora"></i> &nbsp;
+            {{ questionA.questionTitle }}
+          </mat-list-item>
+        </mat-list>
+      </mat-tab>
+      <mat-tab label="Question Posted">
+        <mat-list role="list">
+          <mat-list-item role="listitem" *ngFor="let questionP of profile?.postedQuestion | slice:1">
+            <i class="fab fa-quora"></i>&nbsp;
+            {{ questionP.questionTitle }}
+          </mat-list-item>
+        </mat-list>
+      </mat-tab>
+    </mat-tab-group>
+  </mat-grid-tile>
+</mat-grid-list>

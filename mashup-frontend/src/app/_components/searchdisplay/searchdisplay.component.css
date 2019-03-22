@@ -1,0 +1,49 @@
+  .col-md-4{
+    width: 500px;
+    height: auto;
+    margin-bottom: 20px;
+    background-color: rgb(25, 158, 184)
+  }
+
+  .btn{
+    justify-content: center;
+  }
+
+  .card{
+    margin-top: 20px;
+    margin-bottom: 10px;
+    justify-content: center;
+
+
+  }
+  .card-body{
+    height: 300px;
+
+
+  }
+  .card-deck{
+    /* background-color: rgb(25, 158, 184) */
+    background-color: rgb(25, 158, 184)
+
+  }
+  h2{
+    margin: 40px;
+    text-align: center;
+    color: rgb(25, 158, 184)
+  }
+  p{
+    font-size: 15px;
+    text-align: center;
+  }
+  h3{
+    text-align: center;
+  }
+  button{
+    align-content: center;
+  }
+footer{
+  width: 100%;
+}
+.card-title{
+  height: 140px;
+}

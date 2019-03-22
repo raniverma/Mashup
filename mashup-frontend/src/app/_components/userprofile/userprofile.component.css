@@ -1,0 +1,58 @@
+.tile1{
+  height: 1000px;
+  width: 80%;
+}
+.card {
+  width: 100%;
+  padding: 5%;
+}
+.tile2{
+  height: 100%;
+  width: 50%;
+  margin-left: 50px;
+}
+.box{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-content: stretch;
+  width: 60%;
+}
+.box>*:first-child {
+  align-self: stretch;
+}
+.profileimage{
+  padding: 2vh 2vh 0vh 2vh;
+}
+.card[_ngcontent-c4] {
+  height: 90vh;
+  width: 100%;
+  padding: 5%;
+  font-size: 15px;
+}
+.button-update-profile{
+  padding-bottom: 30px;
+  margin-bottom: 20px;
+}
+.card1 mat-card-content p{
+  font-size: 3rem;
+}
+.card2 p{
+  font-size: 1.6rem;
+}
+.mat-grid-tile .mat-figure {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100rem;
+  padding: 0;
+  margin: 0;
+}
+.company{
+  padding-left: 10px;
+}

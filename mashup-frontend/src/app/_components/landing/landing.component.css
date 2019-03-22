@@ -1,0 +1,45 @@
+.navbar-fixed-top{
+    background:black;
+}
+.logo{
+    width: 100px;
+}
+.hero::after{
+    min-height: 800px;
+    background: url("/assets/MASHUP-BACK.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+p.tagline[_ngcontent-c3][_ngcontent-c3]{
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+.info p{
+    font-size: 15px;
+}
+#contact .form input, #contact .form textarea {
+    border-radius: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    font-size: 15px;
+}
+.team-img{
+    height: 300px;
+}
+
+ngx-spinner p{
+    font-size: 15px;
+}
+
+.feature-col p{
+    font-size: 1.8rem;
+}
+.portfolio p{
+    font-size: 1.6rem;
+}
+.about{
+    padding: 0;
+}
+.about p{
+    font-size: 2rem;
+}

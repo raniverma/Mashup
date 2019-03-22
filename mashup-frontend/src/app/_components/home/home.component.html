@@ -1,0 +1,17 @@
+<!-- When Logged In-->
+<div *ngIf="info.token; else loggedOut">
+  <!-- Recommendation -->
+  <app-recommend></app-recommend>
+</div>
+
+<!-- When Logged In-->
+<ng-template #loggedOut>
+    <!-- Navabar -->
+    <nav class="fixed-top">
+      <app-navbar></app-navbar>
+    </nav>
+  <!-- Landing page -->
+  <app-landing></app-landing>
+  <div id="band" class="container text-center">
+  </div>
+</ng-template>

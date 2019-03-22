@@ -1,0 +1,15 @@
+.Site {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    position: relative;
+  }
+  
+  .Site-content {
+    flex: 1;
+  }
+ 
+  .alert{
+    margin: 0;
+    font-size: 0.8rem;
+  }
